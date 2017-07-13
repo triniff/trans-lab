@@ -1,3 +1,9 @@
+function recuperarDatos(){
+	document.getElementById("holi").innerHTML = "correo: " + localStorage.nombre;		
+}
+function guardarDatos(){
+	localStorage.nombre = document.getElementById("user").value;
+}
 $(document).ready(function() {
 
 	$("#sign-in").click(function(){
@@ -11,7 +17,12 @@ $(document).ready(function() {
 		}
 		else{
 			window.location.href="trans-lab.html";
+			guardarDatos();
 		}
 	})
 
+});
+
+$(document).ready(function() {
+	recuperarDatos();
 });

@@ -52,7 +52,7 @@ font-family: 'Lato', sans-serif;
 
 /*Home*/
 #home{
-	background-color: #262626;
+	/*background-color: #262626;*/
 	height: 100vh;
 	padding: 30px 0;
 }
