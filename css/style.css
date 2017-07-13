@@ -82,7 +82,6 @@ font-family: 'Lato', sans-serif;
 	font-size: 14px;
 }
 .sign-in .input-group i{
-	color: red;
 	position: absolute;
 	z-index: 9000;
 	padding: 18px;
@@ -109,4 +108,14 @@ font-family: 'Lato', sans-serif;
 .sign-text span{
 	color: #FAB50C;
 	font-weight: 900;
+}
+/*sacando flechitas*/
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }
