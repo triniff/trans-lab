@@ -104,6 +104,7 @@ $(document).ready(function() {
 		}
   	}
   	function tarjetaValida(numero){
+
 		$.ajax({
 		        url     : 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json',
 	            type    : 'GET',
@@ -113,7 +114,7 @@ $(document).ready(function() {
 		        })
 		        .done(function(response){
 		        	$("#number-card").val("");
-		        	$("#sel2").val(1);	
+		        	$("#sel2").val(1);
 		            $(".centrado-saldo").append('<div class="consulta-saldo"><h3>SALDO TOTAL</h3><p>' +  response.saldoTarjeta + '</p></div>');
 		        })
 		        .fail(function(){
@@ -123,9 +124,9 @@ $(document).ready(function() {
 
 	/*API mostrar saldo*/
 	$("#saldo").click(function(){
+		$('.centrado-saldo').find(".consulta-saldo").remove();
 		tarjetaYSelect();
 		tarjetaValida(tarjetaYSelect());
-
 	})
 
 
@@ -133,6 +134,7 @@ $(document).ready(function() {
 	 /*funcion calcular saldo tarjeta*/
   	var calcularTarifa = function(s){
 	  	var cobro = $("#sel1").val();
+	  	console.log(cobro);
 	  	var resultado = s.slice(1).replace(".", "") - cobro;
 	  	$(".centrado-saldo").append('<div class="consulta-saldo"><h3>COSTO PASAJE</h3><p>$' +  cobro + '</p></div>');
 	  	$(".centrado-saldo").append('<div class="consulta-saldo"><h3>SALDO FINAL</h3><p>$' +  resultado + '</p></div>');
@@ -161,6 +163,7 @@ $(document).ready(function() {
 
 	}
 	$("#tarifa").click(function(){
+		$('.centrado-saldo').find(".consulta-saldo").remove();
 		tarjetaYSelect();
 		tarjetaValidaTarifa(tarjetaYSelect());
 	})
