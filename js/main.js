@@ -1,9 +1,7 @@
 function recuperarDatos(){
 	$(".perfil-user").prepend('<div class="correo-user">' + localStorage.nombre +'</div>');
 }
-function recuperarDatosTarjeta(){
-	$(".perfil-user").append('<div class="nueva-tarjeta">'+ localStorage.tarjeta +'</div>'); //agregando elemento a la lista
-}
+
 function guardarDatos(){
 	localStorage.nombre = document.getElementById("user").value;
 }
@@ -28,7 +26,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	recuperarDatos();
-	recuperarDatosTarjeta();
+	
 
 	/*Funcion hamburgesa*/
 	var trigger = $('.hamburger'),
@@ -66,26 +64,49 @@ $(document).ready(function() {
   	$(".centrado-saldo").append('<div class="consulta-saldo"><h3>SALDO FINAL</h3><p>$' +  resultado + '</p></div>');
   }
   /*funcion para agregar tarjetas*/
+  	function recuperarDatosTarjeta(){
+		$(".perfil-user").append('<div class="nueva-tarjeta">'+ localStorage.tarjeta +'</div>'); //agregando elemento a la lista
+	}recuperarDatosTarjeta();
 
   	$("#agregar").click(function (tarjeta) {
   		var tarjeta = $("#number-card").val();
 		if (tarjeta == "") {
 			alert("Tienes que agregar una tarea");
 		}else{
-			localStorage.tarjeta = document.getElementById("number-card").value;
-			$(".perfil-user").append('<div class="nueva-tarjeta">'+ tarjeta +'</div>'); //agregando elemento a la lista
+			localStorage.tarjeta = tarjeta;
+			$(".perfil-user").append('<div class="nueva-tarjeta">'+ localStorage.tarjeta +'</div>'); //agregando elemento a la lista
 			$("#number-card").val(""); //limpiando input
 		}
 	});
+  	/*funcion tarjeta en selec*/
+  	function numeroTarjeta (){
+  		console.log(localStorage.tarjeta);
+  		$("#sel2").append('<option>' + localStorage.tarjeta +'</option>');
+  	}numeroTarjeta ();
 
-	/*API mostrar saldo*/
-	$("#saldo").click(function(){
-		var tarjetaNumero = $("#number-card").val();
+  	function tarjetaYSelect(){
+  		if ($("#sel2").val() != null || $("#number-card").val() != "") {
+  			var numero;
+			if ($("#sel2").val() != null) {
+				numero = $("#sel2").val();
+				return numero;
+				$("#sel2").val(1);
+			}if ($("#number-card").val() != null) {
+				numero = $("#number-card").val();
+				return numero;
+				$("#number-card").val("");
+			}
+		}
+		else{
+			alert("Debe poner un número de tarjeta");
+		}
+  	}
+  	function tarjetaValida(numero){
 		$.ajax({
 		        url     : 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json',
 	            type    : 'GET',
 	            dataType: 'json',
-	            data    : {'bip' : tarjetaNumero},
+	            data    : {'bip' : numero},
 	            
 		        })
 		        .done(function(response){
@@ -94,18 +115,26 @@ $(document).ready(function() {
 		        .fail(function(){
 		            console.log("error");
 		        })
+  	}
+
+	/*API mostrar saldo*/
+	$("#saldo").click(function(){
+		tarjetaYSelect();
+		tarjetaValida(tarjetaYSelect());
+
 	})
+
+
 	/*API calcular tarifa*/
-	$("#tarifa").click(function(){
+	function tarjetaValidaTarifa(numero){
 		if ($("#sel1").val() == null) {
 			alert("Debe ingresar una tarifa");
 		}else{
-			var tarjetaNumero = $("#number-card").val();
 			$.ajax({
 			        url     : 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json',
 		            type    : 'GET',
 		            dataType: 'json',
-		            data    : {'bip' : tarjetaNumero},
+		            data    : {'bip' : numero},
 		            
 			        })
 			        .done(function(response){
@@ -116,6 +145,10 @@ $(document).ready(function() {
 			        })
 		}
 
+	}
+	$("#tarifa").click(function(){
+		tarjetaYSelect();
+		tarjetaValidaTarifa(tarjetaYSelect());
 	})
 
 });
