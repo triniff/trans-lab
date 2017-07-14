@@ -491,6 +491,7 @@ input[type=number] {
 	margin-bottom: 10px;
 	background-color: #FAB50C;
 	color: #fff;
+	font-weight: 900;
 }
 
 .botones-trans{
@@ -578,4 +579,43 @@ input[type=number] {
 }
 .preguntas-cont .panel-body p{
 	font-size: 14px;
+}
+
+/*-------------------------------*/
+/*     		  TARIFAS:     		 */
+/*-------------------------------*/
+.centrado{
+	text-align: center;
+	margin: 0 auto;
+}
+.btn-tarifa{
+	width: 50%;
+	padding: 10px;
+	font-weight: 900;
+}
+/*-------------------------------*/
+/*     		  SALDO:     		 */
+/*-------------------------------*/
+.saldo{
+	padding-top: 20px;
+}
+.numero-tarifa, #saldo{
+	margin: 25px 0;
+}
+.consulta-saldo{
+	margin: 60px 0px;
+}
+.consulta-saldo h3{
+	background-color: #545454;
+	color: #fff;
+	font-size: 12px;
+	padding: 10px 0;
+	font-weight: 900;
+}
+.consulta-saldo p{
+	background-color: #FAB50C;
+	padding: 50px;
+	font-size: 40px;
+	font-weight: 900;
+	color: #fff;
 }

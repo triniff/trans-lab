@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Trans Lab</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
+	<!-- Bootstrap Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Fontawesome -->
+		<script src="https://use.fontawesome.com/d2c9b2c5c1.js"></script>
+	<!-- Fuente -->
+		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet">
+	<!-- Estilos -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<section id="trans">
+	<section id="menu">
+	  <h1 class="navbar-brand" href="#">TRANS-LAB</h1>
+		<div id="wrapper">
+	    <div class="overlay"></div>
+	    
+	    <!-- Sidebar -->
+	      <nav class="navbar navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+	        <ul class="nav sidebar-nav">
+	          <li>
+	            <a href="saldo.html"><i class="fa fa-usd" aria-hidden="true"></i>Ver saldo</a>
+	          </li>
+	          <li>
+	            <a href="tarifa.html"><i class="fa fa-th" aria-hidden="true"></i>Calcular tarifa</a>
+	          </li>
+	          <li>
+	            <a href="perfil.html"><i class="fa fa-user" aria-hidden="true"></i>Perfil</a>
+	          </li>
+            <li>
+              <a href="preguntas.html"><i class="fa fa-file-text" aria-hidden="true"></i>Preguntas frecuentes</a>
+            </li>
+            <li>
+              <a href="index.html"><i class="fa fa-arrow-right" aria-hidden="true"></i>Home</a>
+            </li>
+          </ul>
+       </nav>
+    </div>
+	  <!-- /#sidebar-wrapper -->
+    <div id="page-content-wrapper">
+      <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+		    <span class="hamb-top"></span>
+				<span class="hamb-middle"></span>
+				<span class="hamb-bottom"></span>
+	    </button>
+	 </div>
+	</section>
+        <!-- /#page-content-wrapper -->
+	<div class="container saldo">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 numero-tarifa">
+				<div class="input-group input-group-lg">
+					  <input type="number" class="" placeholder="Número de tarjeta" aria-describedby="sizing-addon1" id="number-card">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 numero-tarjeta">
+				<div class="form-group">
+				  <select class="form-control" id="sel-tarjeta">
+					<option disabled selected>Choose your option</option>
+				  </select>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centrado centrado-saldo">
+				<button type="button" class="btn btn-trans btn-tarifa" id="saldo">VER SALDO</button>
+			</div>
+		</div>
+	</div>
+</section>
+
+	<!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- JS -->
+  <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

@@ -29,6 +29,7 @@ $(document).ready(function() {
 $(document).ready(function() {
 	recuperarDatos();
 	recuperarDatosTarjeta();
+
 	/*Funcion hamburgesa*/
 	var trigger = $('.hamburger'),
     overlay = $('.overlay'),
@@ -59,8 +60,8 @@ $(document).ready(function() {
 
   /*funcion para agregar tarjetas*/
 
-  	$("#agregar").click(function (e) {
-    	var tarjeta = $("#number-card").val();
+  	$("#agregar").click(function (tarjeta) {
+  		var tarjeta = $("#number-card").val();
 		if (tarjeta == "") {
 			alert("Tienes que agregar una tarea");
 		}else{
@@ -68,5 +69,24 @@ $(document).ready(function() {
 			$(".perfil-user").append('<div class="nueva-tarjeta">'+ tarjeta +'</div>'); //agregando elemento a la lista
 			$("#number-card").val(""); //limpiando input
 		}
-	}); 
+	});
+
+	/*API*/
+	$("#saldo").click(function(){
+		var tarjetaNumero = $("#number-card").val();
+		$.ajax({
+		        url     : 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json',
+	            type    : 'GET',
+	            dataType: 'json',
+	            data    : {'bip' : tarjetaNumero},
+	            
+		        })
+		        .done(function(response){
+		            $(".centrado-saldo").append('<div class="consulta-saldo"><h3>SALDO TOTAL</h3><p>' +  response.saldoTarjeta + '</p></div>');
+		        })
+		        .fail(function(){
+		            console.log("error");
+		        })
+	})
+
 });
