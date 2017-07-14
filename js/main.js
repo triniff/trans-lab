@@ -58,6 +58,13 @@ $(document).ready(function() {
         $('#wrapper').toggleClass('toggled');
   }); 
 
+  /*funcion calcular saldo tarjeta*/
+  var calcularTarifa = function(s){
+  	var cobro = $("#sel1").val();
+  	var resultado = s.slice(1).replace(".", "") - cobro;
+  	$(".centrado-saldo").append('<div class="consulta-saldo"><h3>COSTO PASAJE</h3><p>$' +  cobro + '</p></div>');
+  	$(".centrado-saldo").append('<div class="consulta-saldo"><h3>SALDO FINAL</h3><p>$' +  resultado + '</p></div>');
+  }
   /*funcion para agregar tarjetas*/
 
   	$("#agregar").click(function (tarjeta) {
@@ -71,7 +78,7 @@ $(document).ready(function() {
 		}
 	});
 
-	/*API*/
+	/*API mostrar saldo*/
 	$("#saldo").click(function(){
 		var tarjetaNumero = $("#number-card").val();
 		$.ajax({
@@ -87,6 +94,28 @@ $(document).ready(function() {
 		        .fail(function(){
 		            console.log("error");
 		        })
+	})
+	/*API calcular tarifa*/
+	$("#tarifa").click(function(){
+		if ($("#sel1").val() == null) {
+			alert("Debe ingresar una tarifa");
+		}else{
+			var tarjetaNumero = $("#number-card").val();
+			$.ajax({
+			        url     : 'http://bip-servicio.herokuapp.com/api/v1/solicitudes.json',
+		            type    : 'GET',
+		            dataType: 'json',
+		            data    : {'bip' : tarjetaNumero},
+		            
+			        })
+			        .done(function(response){
+			            calcularTarifa(response.saldoTarjeta);
+			        })
+			        .fail(function(){
+			            console.log("error");
+			        })
+		}
+
 	})
 
 });
