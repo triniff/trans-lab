@@ -1,5 +1,8 @@
 function recuperarDatos(){
-	$(".perfil-user").prepend('<div class="correo-user">' + localStorage.nombre +'</div>');		
+	$(".perfil-user").prepend('<div class="correo-user">' + localStorage.nombre +'</div>');
+}
+function recuperarDatosTarjeta(){
+	$(".perfil-user").append('<div class="nueva-tarjeta">'+ localStorage.tarjeta +'</div>'); //agregando elemento a la lista
 }
 function guardarDatos(){
 	localStorage.nombre = document.getElementById("user").value;
@@ -25,6 +28,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	recuperarDatos();
+	recuperarDatosTarjeta();
 	/*Funcion hamburgesa*/
 	var trigger = $('.hamburger'),
     overlay = $('.overlay'),
@@ -57,12 +61,11 @@ $(document).ready(function() {
 
   	$("#agregar").click(function (e) {
     	var tarjeta = $("#number-card").val();
-    	console.log(tarjeta);
 		if (tarjeta == "") {
 			alert("Tienes que agregar una tarea");
 		}else{
-			var nuevaTarjeta = '<div class="nueva-tarjeta">'+ tarjeta +'</div>';
-			$(".perfil-user").append(nuevaTarjeta); //agregando elemento a la lista
+			localStorage.tarjeta = document.getElementById("number-card").value;
+			$(".perfil-user").append('<div class="nueva-tarjeta">'+ tarjeta +'</div>'); //agregando elemento a la lista
 			$("#number-card").val(""); //limpiando input
 		}
 	}); 

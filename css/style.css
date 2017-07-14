@@ -472,12 +472,18 @@ input[type=number] {
 
 #trans{
 	background-color: #D8D8D8;
-	height: 100vh;
+	min-height: 100vh;
 }
 
 #menu{
 	background-color: #262626;
 }
+.navbar-brand{
+	color: #fff;
+	padding: 25px 0 0 40%;
+
+}
+
 .btn-trans{
 	width: 100%;
 	padding: 15px;
@@ -536,4 +542,40 @@ input[type=number] {
 	padding: 10px;
 	background-color: #fff;
 	margin: 10px 0;
+}
+/*-------------------------------*/
+/*     PREGUNTAS FRECUENTES:     */
+/*-------------------------------*/
+.preguntas-titulo{
+	background-color: #FAB50C;
+	text-align: center;
+	padding: 80px;
+	height: 220PX;
+	color: #fff;
+	font-size: 25px;
+	font-weight: 900;
+}
+.preguntas-cont{
+	margin-top: 60px;
+}
+.preguntas-cont a:hover, .preguntas-cont a:focus{
+	text-decoration: none;
+}
+
+.preguntas-cont .more-less {
+	color: #FAB50C;
+}
+.preguntas-cont .panel-body h4{
+	color:  #262626;
+	font-weight: 900;
+	padding: 10px 0;
+}
+.preguntas-cont .panel-body ul{
+	list-style-type: disc;
+	list-style-color:#FAB50C;
+	font-size: 14px;
+	padding-left: 10px;
+}
+.preguntas-cont .panel-body p{
+	font-size: 14px;
 }
