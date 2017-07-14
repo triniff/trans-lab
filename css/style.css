@@ -580,6 +580,9 @@ input[type=number] {
 .preguntas-cont .panel-body p{
 	font-size: 14px;
 }
+.panel-body a{
+	color: #FAB50C;
+}
 
 /*-------------------------------*/
 /*     		  TARIFAS:     		 */
