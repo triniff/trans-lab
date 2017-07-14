@@ -1,5 +1,5 @@
 function recuperarDatos(){
-	document.getElementById("holi").innerHTML = "correo: " + localStorage.nombre;		
+	$(".perfil-user").prepend('<div class="correo-user">' + localStorage.nombre +'</div>');		
 }
 function guardarDatos(){
 	localStorage.nombre = document.getElementById("user").value;
@@ -24,7 +24,8 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-	//recuperarDatos();
+	recuperarDatos();
+	/*Funcion hamburgesa*/
 	var trigger = $('.hamburger'),
     overlay = $('.overlay'),
     isClosed = false;
@@ -52,4 +53,17 @@ $(document).ready(function() {
         $('#wrapper').toggleClass('toggled');
   }); 
 
+  /*funcion para agregar tarjetas*/
+
+  	$("#agregar").click(function (e) {
+    	var tarjeta = $("#number-card").val();
+    	console.log(tarjeta);
+		if (tarjeta == "") {
+			alert("Tienes que agregar una tarea");
+		}else{
+			var nuevaTarjeta = '<div class="nueva-tarjeta">'+ tarjeta +'</div>';
+			$(".perfil-user").append(nuevaTarjeta); //agregando elemento a la lista
+			$("#number-card").val(""); //limpiando input
+		}
+	}); 
 });

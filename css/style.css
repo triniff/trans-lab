@@ -50,7 +50,9 @@ body{
 font-family: 'Lato', sans-serif;
 }
 
-/*Home*/
+/*-------------------------------*/
+/*            SIGN-IN:           */
+/*-------------------------------*/
 #home{
 	background-color: #262626;
 	height: 100vh;
@@ -121,9 +123,9 @@ input[type=number] {
 }
 
 
-
-
-/*Menu*/
+/*-------------------------------*/
+/*             MENU:             */
+/*-------------------------------*/
 #wrapper {
   padding-left: 250px;
   transition: all 0.4s ease 0s;
@@ -217,14 +219,8 @@ input[type=number] {
     float: left;
     color: #fff;
     padding-right: 15px;
-}
+      display: inline-block;
 
-#wrapper {
-  padding-left: 0;
-}
-
-#sidebar-wrapper {
-  left: 0;
 }
 
 #wrapper.active {
@@ -237,13 +233,6 @@ input[type=number] {
   width: 250px;
   transition: all 0.4s ease 0s;
 }
-
-#menu-toggle {
-  display: inline-block;
-}
-
-/*TRANS-HOME*/
-/*menu*/
 
 #wrapper {
     padding-left: 0;
@@ -286,10 +275,7 @@ input[type=number] {
 }
 
 
-
-/*-------------------------------*/
 /*     Sidebar nav styles        */
-/*-------------------------------*/
 
 .sidebar-nav {
     position: absolute;
@@ -362,9 +348,7 @@ input[type=number] {
     box-shadow: none;
 }
 
-/*-------------------------------*/
 /*       Hamburger-Cross         */
-/*-------------------------------*/
 
 .hamburger {
   position: absolute;
@@ -469,9 +453,9 @@ input[type=number] {
   -webkit-transition: all .35s ease-in-out;
 }
 
-/*-------------------------------*/
+
 /*            Overlay            */
-/*-------------------------------*/
+
 
 .overlay {
     position: fixed;
@@ -486,7 +470,7 @@ input[type=number] {
     z-index: 1;
 }
 
-#trans-home{
+#trans{
 	background-color: #D8D8D8;
 	height: 100vh;
 }
@@ -494,17 +478,15 @@ input[type=number] {
 #menu{
 	background-color: #262626;
 }
-.botones-trans .btn-trans{
+.btn-trans{
 	width: 100%;
-	padding: 18px;
+	padding: 15px;
 	border-radius: initial;
 	margin-bottom: 10px;
 	background-color: #FAB50C;
-}
-.botones-trans a{
 	color: #fff;
-	font-weight: 900;
 }
+
 .botones-trans{
 	margin: 150px 0;
 }
@@ -514,4 +496,44 @@ input[type=number] {
 .botones-trans a .btn-trans:hover{
 	background-color: #1a1a1a;
 	color: #fff;
+}
+
+/*-------------------------------*/
+/*            PERFIL:            */
+/*-------------------------------*/
+.imagen-perfil{
+	background-color: #FAB50C;
+	text-align: center;
+	padding: 30px;
+}
+.imagen-perfil img{
+	border-radius: 100%;
+	width: 220px;
+}
+.correo-user{
+	text-align: center;
+	width: 100%;
+	padding: 15px;
+	background-color: #fff;
+	margin: 40px 0 10px;
+}
+
+#number-card{
+	background-color: transparent;
+	margin-bottom: 20px;
+	width: 100%;
+	border: none;
+	border-bottom: 1.5px solid  #807F83;
+	padding: 18px 0 10px;
+}
+
+#number-card::placeholder{
+	font-size: 14px;
+	border-top: none;
+}
+.nueva-tarjeta{
+	width: 100%;
+	padding: 10px;
+	background-color: #fff;
+	margin: 10px 0;
 }

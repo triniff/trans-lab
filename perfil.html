@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<section id="trans-home">
+<section id="trans">
 	<section id="menu">
 		<div id="wrapper">
 	    <div class="overlay"></div>
@@ -50,15 +50,20 @@
 	 </div>
 	</section>
         <!-- /#page-content-wrapper -->
-	<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 botones-trans">
-					<a href="saldo.html"><button type="button" class="btn btn-trans" id="saldo">VER SALDO</button></a>
-					<a href="tarifa.html"><button type="button" class="btn btn-trans" id="consultar">CONSULTAR TARIFAS</button></a>
-					<a href="perfil.html"><button type="button" class="btn btn-trans" id="tarifas">PERFIL</button></a>
-					<a href="preguntas.html"><button type="button" class="btn btn-trans" id="preguntas">PREGUNTAS FRECUENTES</button></a>
-				</div>
+	<div class="container trans-perfil">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 imagen-perfil">
+				<img src="img/perfil_sombra.jpg" alt="user perfil"">
 			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 perfil-user">
+				<div class="input-group input-group-lg">
+					  <input type="number" class="" placeholder="Número de tarjeta" aria-describedby="sizing-addon1" id="number-card">
+					</div>
+					<button type="button" class="btn btn-trans" id="agregar">AGREGAR TARJETA</button>
+			</div>
+		</div>
 	</div>
 </section>
 
