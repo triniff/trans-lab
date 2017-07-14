@@ -12,9 +12,9 @@ $(document).ready(function() {
 		var pass = $("#pass").val();
 
 		if (correo == "" || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(correo) == false){
-			alert("nope");
+			alert("Debe ingresar un correo válido");
 		}else if (pass == "" || pass.length > 8) {
-			alert("nope 2")
+			alert("Debe ingresar una contraseña (max. 8 dígitos)")
 		}
 		else{
 			window.location.href="trans-lab.html";
