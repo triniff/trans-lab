@@ -56,13 +56,6 @@ $(document).ready(function() {
         $('#wrapper').toggleClass('toggled');
   }); 
 
-  /*funcion calcular saldo tarjeta*/
-  var calcularTarifa = function(s){
-  	var cobro = $("#sel1").val();
-  	var resultado = s.slice(1).replace(".", "") - cobro;
-  	$(".centrado-saldo").append('<div class="consulta-saldo"><h3>COSTO PASAJE</h3><p>$' +  cobro + '</p></div>');
-  	$(".centrado-saldo").append('<div class="consulta-saldo"><h3>SALDO FINAL</h3><p>$' +  resultado + '</p></div>');
-  }
   /*funcion para agregar tarjetas*/
   	function recuperarDatosTarjeta(){
 		$(".perfil-user").append('<div class="nueva-tarjeta">'+ localStorage.tarjeta +'</div>'); //agregando elemento a la lista
@@ -90,11 +83,9 @@ $(document).ready(function() {
 			if ($("#sel2").val() != null) {
 				numero = $("#sel2").val();
 				return numero;
-				$("#sel2").val(1);
 			}if ($("#number-card").val() != null) {
 				numero = $("#number-card").val();
 				return numero;
-				$("#number-card").val("");
 			}
 		}
 		else{
@@ -110,6 +101,8 @@ $(document).ready(function() {
 	            
 		        })
 		        .done(function(response){
+		        	$("#number-card").val("");
+		        	$("#sel2").val(1);	
 		            $(".centrado-saldo").append('<div class="consulta-saldo"><h3>SALDO TOTAL</h3><p>' +  response.saldoTarjeta + '</p></div>');
 		        })
 		        .fail(function(){
@@ -126,6 +119,14 @@ $(document).ready(function() {
 
 
 	/*API calcular tarifa*/
+	 /*funcion calcular saldo tarjeta*/
+  	var calcularTarifa = function(s){
+	  	var cobro = $("#sel1").val();
+	  	var resultado = s.slice(1).replace(".", "") - cobro;
+	  	$(".centrado-saldo").append('<div class="consulta-saldo"><h3>COSTO PASAJE</h3><p>$' +  cobro + '</p></div>');
+	  	$(".centrado-saldo").append('<div class="consulta-saldo"><h3>SALDO FINAL</h3><p>$' +  resultado + '</p></div>');
+	  	$("#sel1").val(1);
+  	}
 	function tarjetaValidaTarifa(numero){
 		if ($("#sel1").val() == null) {
 			alert("Debe ingresar una tarifa");
@@ -138,6 +139,8 @@ $(document).ready(function() {
 		            
 			        })
 			        .done(function(response){
+			        	$("#number-card").val("");
+		        		$("#sel2").val(1);	
 			            calcularTarifa(response.saldoTarjeta);
 			        })
 			        .fail(function(){
