@@ -12,9 +12,20 @@ $(document).ready(function() {
 		var pass = $("#pass").val();
 
 		if (correo == "" || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(correo) == false){
-			alert("Debe ingresar un correo válido");
+			$("body").append('<div class="bs-example">'+
+				'<div class="alert alert-danger">' +
+					'<a href="#" class="close" data-dismiss="alert">&times;</a>' + 
+					'<strong>Oh snap!</strong> Debe ingresar un correo válido' +
+				'</div>' +
+			'</div>')
+			
 		}else if (pass == "" || pass.length > 8) {
-			alert("Debe ingresar una contraseña (max. 8 dígitos)")
+			$("body").append('<div class="bs-example">'+
+				'<div class="alert alert-danger">' +
+					'<a href="#" class="close" data-dismiss="alert">&times;</a>' + 
+					'<strong>Ya casi!</strong> ingrese una contraseña (max. 8 dígitos)' +
+				'</div>' +
+			'</div>')
 		}
 		else{
 			window.location.href="trans-lab.html";

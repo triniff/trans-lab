@@ -1,53 +1,10 @@
-/*RESET*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
 
 /*ESTILOS CSS*/
 /*generales*/
 body{
-font-family: 'Lato', sans-serif;
+  font-family: 'Lato', sans-serif;
+  height: auto;
+
 }
 
 /*-------------------------------*/
@@ -71,7 +28,6 @@ font-family: 'Lato', sans-serif;
 }
 .sign-in .input-group .form-control{
 	border-radius: initial;
-	border: none;
 	background-color: #fff;
 	padding: 25px;
 }
@@ -83,11 +39,13 @@ font-family: 'Lato', sans-serif;
 	font-weight: 300;
 	font-size: 14px;
 }
-.sign-in .input-group i{
-	position: absolute;
-	z-index: 9000;
-	padding: 18px;
-	color: #807F83;
+.input-group-addon{
+  width: 50px;
+  background-color: #fff;
+  border-radius: 0;
+}
+.input-group-addon i{
+  font-size: 18px;
 }
 .btn-sign{
 	width: 100%;
@@ -472,7 +430,7 @@ input[type=number] {
 
 #trans{
 	background-color: #D8D8D8;
-	min-height: 100vh;
+	max-height: 100vh;
 }
 
 #menu{
@@ -512,6 +470,7 @@ input[type=number] {
 	background-color: #FAB50C;
 	text-align: center;
 	padding: 30px;
+  margin-top: -10px;
 }
 .imagen-perfil img{
 	border-radius: 100%;
@@ -555,6 +514,8 @@ input[type=number] {
 	color: #fff;
 	font-size: 25px;
 	font-weight: 900;
+  margin-top: -10px;
+
 }
 .preguntas-cont{
 	margin-top: 60px;
@@ -624,4 +585,18 @@ input[type=number] {
 	font-size: 40px;
 	font-weight: 900;
 	color: #fff;
+}
+
+
+/*Alerts*/
+.bs-example{
+  z-index: 9999;
+  position: absolute;
+  top: 48%;
+  width: 100%;
+}
+.fa-events-icons-ready{
+    background-color: #d8d8d8;
+    padding: 0;
+    margin: 0;
 }

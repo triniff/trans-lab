@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Trans-Lab</title>
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimun-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Bootstrap Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!-- Fontawesome -->
@@ -24,13 +24,13 @@
 			</div>
 			<div class="row sign-in">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<div class="input-group input-group-lg">
-						<i class="fa fa-user-o" aria-hidden="true"></i>
-					  <input type="text" class="form-control" placeholder="Correo electrónico" aria-describedby="sizing-addon1" id="user">
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+					  <input type="text" class="form-control" placeholder="Correo electronico" aria-describedby="basic-addon1" id="user">
 					</div>
-					<div class="input-group input-group-lg">
-						<i class="fa fa-lock" aria-hidden="true"></i>
-					  <input type="number" class="form-control" placeholder="Contraseña" aria-describedby="sizing-addon1" id="pass">
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon2"><i class="fa fa-lock" aria-hidden="true"></i></span>
+					  <input type="number" class="form-control" placeholder="Contraseña" aria-describedby="basic-addon1" id="pass">
 					</div>
 					<button type="button" class="btn btn-sign" id="sign-in">INICIAR SESIÓN</button>
 					<a href="#">¿Olvidaste tu contraseña?</a>
@@ -43,6 +43,8 @@
 			</div>
 		</div>
 	</section>
+
+
 
 	<!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
